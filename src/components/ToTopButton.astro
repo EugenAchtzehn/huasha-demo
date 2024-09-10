@@ -1,0 +1,32 @@
+<div class="aside__top" style={Astro.props.style}>
+  <img class="aside__top-image" src="/arrow-up-white.svg" alt="回到頁面頂端" />
+</div>
+
+<style>
+  .aside__top {
+    background-color: #4682ab;
+    display: inline-block;
+    position: fixed;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    right: 1.5rem;
+    bottom: 4rem;
+    cursor: pointer;
+  }
+  .aside__top-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+<script>
+  import $ from 'jquery';
+  $(function () {
+    $('.aside__top').on('click', function (e) {
+      e.preventDefault();
+      $('html, body').animate({ scrollTop: 0 }, 700);
+    });
+  });
+</script>

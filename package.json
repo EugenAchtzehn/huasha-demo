@@ -1,5 +1,5 @@
 {
-  "name": "green-gamma",
+  "name": "huasha",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,6 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.15.3"
+    "astro": "^4.15.3",
+    "bootstrap": "^5.3.3",
+    "jquery": "^3.7.1",
+    "sass": "^1.78.0"
   }
 }

@@ -1,0 +1,100 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import LinkButton from '../../components/LinkButton.astro';
+---
+
+<Layout title="服務內容">
+  <div class="service__wrap">
+    <h1>服務內容</h1>
+    <div class="service__wrap-links-wrap">
+      <LinkButton link="/service-list/service-1" buttonText="中小型貨櫃式海水淡化機" />
+      <LinkButton link="/service-list/service-2" buttonText="水資源處理及資源化再利用" />
+      <LinkButton link="/service-list/service-3" buttonText="設備銷售" />
+    </div>
+    <div class="row g-3">
+      <div class="col-12 col-lg-6">
+        <a href="/service-list/service-1">
+          <img
+            class="service__link-image"
+            src="/service-1.jpg"
+            alt="中小型貨櫃式海水淡化機示意圖"
+          />
+        </a>
+      </div>
+      <div class="col-12 col-lg-6">
+        <h2 class="service__link-title">
+          <a href="/service-list/service-1">中小型貨櫃式海水淡化機</a>
+        </h2>
+        <p>
+          一種新型整合增壓泵與能源回收器，處理全程不添加化學藥劑、RO膜可長期使用且低能耗的貨櫃式海水淡化設備。
+          採用模組化設計，安裝方便，日出水量依原海水水質報告進行客製化生產，
+          解決離小島、渡假村、船舶、海上鑽油平台、沿海緊急供水使用，為全新劃時代革命性海水淡化機組
+        </p>
+      </div>
+      <div class="col-12 col-lg-6">
+        <a href="/service-list/service-2">
+          <img
+            class="service__link-image"
+            src="/service-2.jpg"
+            alt="水資源處理及資源化再利用示意圖"
+          />
+        </a>
+      </div>
+      <div class="col-12 col-lg-6">
+        <h2 class="service__link-title">
+          <a href="/service-list/service-2">水資源處理及資源化再利用</a>
+        </h2>
+        <p>
+          提供各產業廢水處理與資源化回收利用之評估、設計、施工、設備。
+          在客製化的解決方案中，我們根據客戶的主觀需求與客觀環境，把廢水的價值最大化，注重每個工序細節，實現減廢零排目標。
+        </p>
+      </div>
+      <div class="col-12 col-lg-6">
+        <a href="/service-list/service-3">
+          <img class="service__link-image" src="/service-3.jpg" alt="設備銷售示意圖" />
+        </a>
+      </div>
+      <div class="col-12 col-lg-6">
+        <h2 class="service__link-title">
+          <a href="/service-list/service-3">設備銷售</a>
+        </h2>
+        <p>
+          華夏資源開發股份有限公司引以為傲的過濾分離設備，是我們專家團隊多年來不懈努力和自主研發的成果。
+          這項設備不僅擁有高度的創新性，還經過了專利申請程序，以確保其獨特性和技術優勢在市場上的地位。
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>
+<style lang="scss">
+  .service__wrap {
+    padding: 2rem 0;
+    p {
+      line-height: 1.5rem;
+      font-size: 1.2rem;
+    }
+  }
+  .service__wrap-links-wrap {
+    padding: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    // flex-wrap: wrap;
+  }
+  .service__link-image {
+    max-width: 100%;
+  }
+  .service__link-title {
+    margin-bottom: 1.5rem;
+    a {
+      text-decoration: none;
+      color: #4682ab;
+    }
+  }
+
+  @media (max-width: 575.9px) {
+    .service__wrap-links-wrap {
+      display: block;
+    }
+  }
+</style>

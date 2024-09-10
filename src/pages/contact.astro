@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="聯絡我們">
+  <div class="contact__wrap">
+    <h1>聯絡我們</h1>
+    <div class="row">
+      <div class="col-lg-6">
+        <section class="contact__wrap-info">
+          <h2 class="mb-3">聯絡資訊</h2>
+          <ul class="contact__info-list">
+            <li>
+              <img src="/telephone-fill.svg" alt="電話icon" loading="eager" />
+              <a class="contact__info-link" href="tel:07-3350006">07-3350006</a>
+            </li>
+            <li>
+              <img src="/printer-fill.svg" alt="傳真icon" loading="lazy" />
+              <span class="contact__info-link">07-3350072</span>
+            </li>
+            <li>
+              <img src="/mailbox2.svg" alt="電子郵件icon" loading="lazy" />
+              <a class="contact__info-link" href="mailto:huasha0408@gmail.com">
+                huasha0408@gmail.com
+              </a>
+            </li>
+            <li>
+              <img src="/pin-map-fill.svg" alt="地址icon" loading="lazy" />
+              <span class="contact__info-link">高雄市苓雅區四維三路 6 號 12 樓之 1 (A6) </span>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="col-lg-6">
+        <section class="contact__wrap-map ratio ratio-16x9">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.2418156557455!2d120.30859107358094!3d22.619912831237915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e049b7abab989%3A0xaf9d7e87ec023149!2zODAy6auY6ZuE5biC6IuT6ZuF5Y2A5Zub57at5LiJ6LevNuiZnzEyIOS5iyAx!5e0!3m2!1szh-TW!2stw!4v1725731659177!5m2!1szh-TW!2stw"
+            style="border:0;"
+            title="公司位置"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+      </div>
+    </div>
+  </div>
+</Layout>
+<style>
+  .contact__wrap {
+    padding: 2rem 0;
+  }
+  .contact__wrap-info {
+    height: 100%;
+  }
+  .contact__info-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+  .contact__info-list li {
+    margin-bottom: 0.5rem;
+  }
+  .contact__info-link {
+    padding-left: 0.75rem;
+    color: #000000;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .contact__info-link:hover {
+    color: #5a5a5a;
+  }
+</style>
