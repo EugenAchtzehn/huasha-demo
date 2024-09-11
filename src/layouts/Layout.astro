@@ -23,23 +23,25 @@ const { title } = Astro.props;
     <header class="header">
       <section class="container-fluid">
         <div class="header__content-wrap">
-          <div class="header__logo"></div>
+          <div class="header__logo">
+            <img src="/nav-hsrd-logo.png" alt="華夏資源Logo" />
+          </div>
           <ul class="header__menu">
             <li>
-              <a class="header__menu-link" href="/">首頁</a>
+              <a class="header__menu-link" href="/">關於我們</a>
             </li>
-            <li>
+            <!-- <li>
               <a class="header__menu-link" href="/about">公司介紹</a>
-            </li>
+            </li> -->
             <li>
               <a class="header__menu-link" href="/service-list">服務內容</a>
             </li>
             <li>
               <a class="header__menu-link" href="/gallery-list">案件與工程實績</a>
             </li>
-            <li>
+            <!-- <li>
               <a class="header__menu-link" href="/news-list">最新消息</a>
-            </li>
+            </li> -->
             <li>
               <a class="header__menu-link" href="/contact">聯絡我們</a>
             </li>
@@ -73,7 +75,7 @@ const { title } = Astro.props;
     <ToTopButton />
   </body>
 </html>
-<style is:global>
+<style lang="scss" is:global>
   :root {
     --accent: 136, 58, 234;
     --accent-light: 224, 204, 250;
@@ -113,9 +115,10 @@ const { title } = Astro.props;
   h1 {
     color: #4682ab;
     text-align: center;
-    font-size: 1.75rem;
+    font-size: 1.8rem;
     letter-spacing: 0.25rem;
     font-weight: 700;
+    margin-top: 2rem;
     margin-bottom: 2rem;
   }
   h2 {
@@ -125,9 +128,26 @@ const { title } = Astro.props;
     letter-spacing: 0.25rem;
     font-weight: 700;
   }
+  h3 {
+    color: #4682ab;
+    text-align: center;
+    font-size: 1.3rem;
+    letter-spacing: 0.25rem;
+    font-weight: 700;
+  }
+  .content-box {
+    background-color: #ffffff;
+    height: 100%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
   .header {
     background-color: rgb(70, 130, 171);
     font-weight: 700;
+  }
+  .header__logo {
+    img {
+      max-height: 120px;
+    }
   }
   .header__content-wrap {
     display: flex;
@@ -141,9 +161,13 @@ const { title } = Astro.props;
     /* flex-wrap: wrap; */
     margin-bottom: 0;
     padding-left: 0;
+    li {
+      align-self: center;
+    }
   }
   .header__menu-link {
-    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    padding: 0.5rem 1.2rem;
     text-decoration: none;
     transition: all 0.3s;
     color: #ffffff;

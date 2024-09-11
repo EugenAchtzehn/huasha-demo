@@ -4,39 +4,72 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="華夏資源開發 首頁">
   <div class="index__wrap">
-    <h1></h1>
-    <div class="row">
-      <div class="col-12 col-lg-4">大水滴</div>
-      <div class="col-12 col-lg-8">
-        <h2>2050 淨零轉型</h2>
-        <p>
-          華夏資源致力於開發創新的科技和解決方案，我們深知保護自然生態的重要性，不僅攸關競爭力，
-          也關係環境永續發展，打下長治久安的基礎，留下一個更好的環境給年輕人。
-        </p>
+    <h1>我們願景和專長</h1>
+    <section class="row g-2 mb-3">
+      <div class="col-12 col-lg-6">
+        <section class="index__image-wrap">
+          <img src="/water-drop-1.png" alt="水滴icon-1" />
+        </section>
       </div>
-      <div class="col-12 col-lg-4">
-        <h2>移動式海水淡化系統開發</h2>
-        <p>
-          自主開發設計符合使用者當地海水水質標準及產出淡水水質標準的設備需求，滿足客戶需求<br />
-          海水淡化解決方案提供者與客製化海水淡化設備研發商。
-        </p>
+      <div class="col-12 col-lg-6">
+        <section class="content-box inner-adjust">
+          <h2>2050 淨零轉型</h2>
+          <p>
+            華夏資源致力於開發創新的科技和解決方案，我們深知保護自然生態的重要性，不僅攸關競爭力，
+            也關係環境永續發展，打下長治久安的基礎，留下一個更好的環境給年輕人。
+          </p>
+        </section>
       </div>
-      <div class="col-12 col-lg-8">大水滴</div>
-      <div class="col-12 col-lg-4">大水滴</div>
-      <div class="col-12 col-lg-8">
-        <h2>海水淡化設備代理銷售</h2>
-        <p>
-          引進歐洲最先進的四合一技術----整合高壓海水泵浦、能源回收器、增壓泵與動力馬達之 4-in-1
-          technology<br />
-          達到節約空間、減少能耗、降低成本與模組化安裝的優勢
-        </p>
+    </section>
+    <section class="row g-2 mb-3 flex-column-reverse flex-lg-row">
+      <div class="col-12 col-lg-6">
+        <section class="content-box inner-adjust">
+          <h2>移動式海水淡化系統開發</h2>
+          <p>
+            自主開發設計符合使用者當地海水水質標準及產出淡水水質標準的設備需求，滿足客戶需求<br />
+            海水淡化解決方案提供者與客製化海水淡化設備研發商。
+          </p>
+        </section>
       </div>
-    </div>
+      <div class="col-12 col-lg-6">
+        <section class="index__image-wrap">
+          <img src="/water-drop-2.png" alt="水滴icon-2" />
+        </section>
+      </div>
+    </section>
+    <section class="row g-2 mb-3">
+      <div class="col-12 col-lg-6">
+        <section class="index__image-wrap">
+          <img src="/water-drop-3.png" alt="水滴icon-3" />
+        </section>
+      </div>
+      <div class="col-12 col-lg-6">
+        <section class="content-box inner-adjust">
+          <h2>海水淡化設備代理銷售</h2>
+          <p>
+            引進歐洲最先進的四合一技術----整合高壓海水泵浦、能源回收器、增壓泵與動力馬達之 4-in-1
+            technology<br />
+            達到節約空間、減少能耗、降低成本與模組化安裝的優勢
+          </p>
+        </section>
+      </div>
+    </section>
   </div>
 </Layout>
 
-<style>
+<style lang="scss">
   .index__wrap {
     padding: 2rem 0;
+  }
+  .index__image-wrap {
+    text-align: center;
+    img {
+    }
+  }
+  .inner-adjust {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
 </style>
