@@ -1,5 +1,7 @@
 ---
 import '../styles/bootstrap.scss';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import ToTopButton from '../components/ToTopButton.astro';
 interface Props {
   title: string;
@@ -14,63 +16,20 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title} - 華夏資源開發股分有限公司</title>
   </head>
 
   <body>
-    <header class="header">
-      <section class="container-fluid">
-        <div class="header__content-wrap">
-          <div class="header__logo">
-            <img src="/nav-hsrd-logo.png" alt="華夏資源Logo" />
-          </div>
-          <ul class="header__menu">
-            <li>
-              <a class="header__menu-link" href="/">關於我們</a>
-            </li>
-            <!-- <li>
-              <a class="header__menu-link" href="/about">公司介紹</a>
-            </li> -->
-            <li>
-              <a class="header__menu-link" href="/service-list">服務內容</a>
-            </li>
-            <li>
-              <a class="header__menu-link" href="/gallery-list">案件與工程實績</a>
-            </li>
-            <!-- <li>
-              <a class="header__menu-link" href="/news-list">最新消息</a>
-            </li> -->
-            <li>
-              <a class="header__menu-link" href="/contact">聯絡我們</a>
-            </li>
-          </ul>
-        </div>
-      </section>
-    </header>
+    <Header />
     <main class="main">
       <div class="container">
         <slot />
       </div>
     </main>
-    <footer class="footer">
-      <section class="container-fluid">
-        <div class="footer__logo">
-          <img class="footer__logo-image" src="/footer-water-logo.png" alt="華夏Logo" />
-        </div>
-        <div class="footer__description">
-          <p>
-            華夏資源開發的核心技術團隊，專注於海水淡化設備開發設計，擁有自主研發能力與豐富的海水淡化廠操作維運經驗。
-          </p>
-          <p>同時，本公司也提供各產業水處理與資源化再利用之評估與技術諮詢。</p>
-          <p>
-            在客製化的解決方案中，我們會根據客戶的主觀需求與客觀環境，將水資源價值最大化，注重每個工序細節，實現減廢零排目標。
-          </p>
-        </div>
-        <p class="mb-0">© 華夏資源開發股份有限公司</p>
-      </section>
-    </footer>
+    <Footer />
+
     <!-- <ToTopButton style="background-color: pink;" /> -->
     <ToTopButton />
   </body>
@@ -105,7 +64,7 @@ const { title } = Astro.props;
   body {
     color: #3e3a39;
     background-color: #ffffff;
-    background-image: url(/background-pattern.png);
+    background-image: url('/images/background-pattern.png');
     /* background-position: center; */
     background-size: auto;
     background-repeat: repeat;
@@ -126,6 +85,7 @@ const { title } = Astro.props;
     text-align: center;
     font-size: 1.5rem;
     letter-spacing: 0.25rem;
+    line-height: 2rem;
     font-weight: 700;
   }
   h3 {
@@ -135,90 +95,24 @@ const { title } = Astro.props;
     letter-spacing: 0.25rem;
     font-weight: 700;
   }
+
   .content-box {
     background-color: #ffffff;
     height: 100%;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: 0 0.125rem 0.5rem 0 rgba(99, 99, 99, 0.2);
   }
-  .header {
-    background-color: rgb(70, 130, 171);
-    font-weight: 700;
+  .content-box:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   }
-  .header__logo {
-    img {
-      max-height: 120px;
-    }
-  }
-  .header__content-wrap {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 0;
-  }
-  .header__menu {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    /* flex-wrap: wrap; */
-    margin-bottom: 0;
-    padding-left: 0;
-    li {
-      align-self: center;
-    }
-  }
-  .header__menu-link {
-    font-size: 1.1rem;
-    padding: 0.5rem 1.2rem;
-    text-decoration: none;
-    transition: all 0.3s;
-    color: #ffffff;
-  }
-  .header__menu-link:hover {
-    color: #e6e6e6;
-  }
+
   .main {
     min-height: 80vh;
   }
-  .footer {
-    color: #ffffff;
-    background-color: rgb(70, 130, 171);
-    background-image: url(/footer-background.png);
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .footer__logo {
-    text-align: center;
-  }
-  .footer__logo-image {
-    max-width: 250px;
-    max-height: 250px;
-  }
-  /* 針對小螢幕要可以 100% */
-  .footer__description {
-    max-width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 0.5rem;
-    border-left: 2px solid #ffffff;
-    /* text-align: center; */
-  }
+
+  // lg breakpoint
   @media (max-width: 991.9px) {
     h1 {
       margin-bottom: 1rem;
-    }
-  }
-  @media (max-width: 767.9px) {
-    .footer__description {
-      max-width: 80%;
-    }
-  }
-  @media (max-width: 575.9px) {
-    .footer__description {
-      max-width: 95%;
-    }
-  }
-  @media (max-width: 1920px) {
-    .footer {
-      background-position: center left;
     }
   }
 </style>
@@ -236,5 +130,6 @@ const { title } = Astro.props;
   // import 'bootstrap/js/dist/tab';
   // import 'bootstrap/js/dist/toast';
   // import 'bootstrap/js/dist/tooltip';
-  import $ from 'jquery';
+
+  // import $ from 'jquery';
 </script>

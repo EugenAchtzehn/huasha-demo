@@ -1,0 +1,65 @@
+---
+import { Image } from 'astro:assets';
+import footerLogo from '../images/layout/footer-water-logo.png';
+---
+
+<footer class="footer">
+  <section class="container-fluid">
+    <div class="footer__logo">
+      <Image class="footer__logo-image" src={footerLogo} alt="華夏Logo" />
+    </div>
+    <div class="footer__description">
+      <p>
+        華夏資源開發的核心技術團隊，專注於海水淡化設備開發設計，擁有自主研發能力與豐富的海水淡化廠操作維運經驗。
+      </p>
+      <p>同時，本公司也提供各產業水處理與資源化再利用之評估與技術諮詢。</p>
+      <p>
+        在客製化的解決方案中，我們會根據客戶的主觀需求與客觀環境，將水資源價值最大化，注重每個工序細節，實現減廢零排目標。
+      </p>
+    </div>
+    <p class="mb-0">© 華夏資源開發股份有限公司</p>
+  </section>
+</footer>
+<style lang="scss">
+  .footer {
+    color: #ffffff;
+    background-color: rgb(70, 130, 171);
+    background-image: url(/images/footer-background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .footer__logo {
+    text-align: center;
+  }
+  .footer__logo-image {
+    max-width: 250px;
+    object-fit: contain;
+  }
+  /* 針對小螢幕要可以 100% */
+  .footer__description {
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    border-left: 2px solid #ffffff;
+    /* text-align: center; */
+  }
+  // md breakpoint
+  @media (max-width: 767.9px) {
+    .footer__description {
+      max-width: 80%;
+    }
+  }
+  // sm breakpoint
+  @media (max-width: 575.9px) {
+    .footer__description {
+      max-width: 95%;
+    }
+  }
+  // ultra wide devices
+  @media (max-width: 1920px) {
+    .footer {
+      background-position: center left;
+    }
+  }
+</style>

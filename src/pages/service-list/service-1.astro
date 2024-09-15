@@ -1,7 +1,169 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import deviceIllustrationImg from '../../images/service/1_device-illustration.jpg';
+import prototypeSpecImg from '../../images/service/2_prototype-spec.jpg';
+import noticeImg from '../../images/service/3_notice.jpg';
+import containerAppearanceImg from '../../images/service/4_container-appearance.jpg';
+import vesselImag from '../../images/service/5_RO-vessel.jpg';
+import pumpImg from '../../images/service/6_pump.jpg';
+import filterImg from '../../images/service/7_filter.jpg';
+import appearanceImg from '../../images/service/8_appearance.jpg';
+import LinkButton from '../../components/LinkButton.astro';
 ---
 
 <Layout title="中小型貨櫃式海水淡化機">
-  <h1>Service-1 中小型貨櫃式海水淡化機</h1>
+  <div class="service-1__wrap">
+    <h1>中小型貨櫃式海水淡化機</h1>
+    <h2>
+      依據使用客戶所在海水水質檢驗報告，開發設計客製化中小型海水淡化機<br />
+      產水量 50-1000 CMD
+    </h2>
+    <Image
+      class="service-1__wrap-demo-pics object-contain"
+      src={deviceIllustrationImg}
+      alt="裝置圖解"
+      loading="eager"
+    />
+    <h3 class="list-disc custom-title">打破全世界海水淡化廠操作邏輯</h3>
+    <ul>
+      <li>顛覆海水淡化必須加化學藥劑的業界規範</li>
+      <li>在免藥洗前提下RO膜可使用期達3年以上</li>
+      <li>
+        低於大型海水淡化廠的平均能耗3kWh/m<sup>3</sup>
+      </li>
+    </ul>
+    <h3 class="list-disc custom-title">
+      廣泛應用在離小島、渡假村、船舶、海上鑽油平台、沿海緊急供水
+    </h3>
+    <p>我們提供以下三種中小型海水淡化機客製化核心模組，供客戶選擇：</p>
+    <ul>
+      <li>
+        <span class="highlight-text">沒有能源回收器(non Energy Recovery Device, non-ERD)：</span>
+        <br />
+        具備小機組、精簡化及價格低廉優勢
+      </li>
+      <li>
+        <span class="highlight-text">
+          採用歐洲製造整合增壓泵、能源回收器與電動馬達的軸向高壓泵(HPP integrated Booster Pump, ERD
+          and Electric Motor)
+        </span>
+        <br />
+        設備極度縮小空間、兼具節能化與維運成本低之優勢
+      </li>
+      <li>
+        <span class="highlight-text">
+          自主研發專利設備，達免加藥、RO膜長效使用(<span class="highlight-text-red-reverse"
+            >chemical free</span
+          > & RO membrane long-term use, ERD integrated Booster Pump)：
+        </span>
+        <br />
+        <span class="highlight-text-red-reverse">
+          結合上述二種設備之競爭優勢，且<span class="underline-text">海淡過程免添加化學藥劑</span>，
+          <span class="highlight-text-red">海水RO膜免藥洗單次可達使用時間長達3年以上</span>
+        </span>
+      </li>
+    </ul>
+    <h3 class="list-disc custom-title">
+      機組具市場價格競爭力、有快速組建之優勢，解決水源匱乏地區民眾之苦
+    </h3>
+    <p class="highlight-text-custom fw-bold">自主研發200CMD海淡機組設備規格</p>
+    <Image
+      class="service-1__wrap-demo-pics object-contain"
+      src={prototypeSpecImg}
+      alt="原型機規格"
+      loading="lazy"
+    />
+    <Image
+      class="service-1__wrap-demo-pics object-contain"
+      src={noticeImg}
+      alt="注意事項"
+      loading="lazy"
+    />
+    <h3 class="list-disc custom-title">200CMD原型機照片</h3>
+    <Image
+      class="service-1__wrap-demo-pics"
+      src={containerAppearanceImg}
+      alt="貨櫃外觀"
+      loading="lazy"
+    />
+    <Image class="service-1__wrap-demo-pics" src={vesselImag} alt="RO Vessel" loading="lazy" />
+    <Image class="service-1__wrap-demo-pics" src={pumpImg} alt="物理泵" loading="lazy" />
+    <Image class="service-1__wrap-demo-pics" src={filterImg} alt="砂濾桶" loading="lazy" />
+    <Image class="service-1__wrap-demo-pics" src={appearanceImg} alt="裝置外觀" loading="lazy" />
+    <div class="service__wrap-link-wrap">
+      <LinkButton link="/service-list" buttonText="回服務內容" />
+    </div>
+  </div>
 </Layout>
+<style lang="scss">
+  .service-1__wrap {
+    padding: 2rem 0;
+    p {
+      line-height: 1.8rem;
+      font-size: 1.2rem;
+    }
+    li {
+      line-height: 1.8rem;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      list-style-type: circle;
+    }
+    .custom-title {
+      text-align: left;
+      margin: 1rem 0;
+    }
+    .service-1__wrap-demo-pics {
+      max-width: 100%;
+      display: block;
+      margin: 1rem auto;
+      object-fit: contain;
+    }
+  }
+  .service__wrap-link-wrap {
+    padding: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+  .list-disc {
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  .list-disc::before {
+    position: absolute;
+    top: 0;
+    left: 0.2rem;
+    content: '•';
+    // margin: 0 0.5rem;
+  }
+  .highlight-text {
+    background-color: #ffc408;
+  }
+  .highlight-text-red {
+    background-color: #e83015;
+    color: #ffffff;
+  }
+  .highlight-text-red-reverse {
+    color: #e83015;
+  }
+  .underline-text {
+    text-decoration: underline;
+  }
+  .highlight-text-custom {
+    color: #854836;
+  }
+
+  // lg breakpoint
+  @media (max-width: 991.9px) {
+    .service-1__wrap {
+      .service-1__wrap-demo-pics {
+        object-fit: cover;
+      }
+      // 給橫向圖片用的
+      .object-contain {
+        object-fit: contain;
+      }
+    }
+  }
+</style>

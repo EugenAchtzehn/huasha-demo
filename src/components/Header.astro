@@ -1,0 +1,199 @@
+---
+import { Image } from 'astro:assets';
+import navHsrdLogo from '../images/layout/nav-hsrd-logo.png';
+---
+
+<header class="header">
+  <section class="container-fluid">
+    <div class="header__content-wrap">
+      <div class="header__logo">
+        <Image class="img" src={navHsrdLogo} alt="華夏資源Logo" loading="eager" />
+      </div>
+      <div class="header__mobile-menu-wrap">
+        <div class="header__mobile-menu" id="headerMobileMenu">
+          <div class="menu-bar bar-top"></div>
+          <div class="menu-bar bar-middle"></div>
+          <div class="menu-bar bar-bottom"></div>
+        </div>
+      </div>
+      <ul class="header__menu" id="headerMenu">
+        <li>
+          <a class="header__menu-link" href="/">關於我們</a>
+        </li>
+        <!-- <li>
+            <a class="header__menu-link" href="/about">公司介紹</a>
+          </li> -->
+        <li>
+          <a class="header__menu-link" href="/service-list">服務內容</a>
+        </li>
+        <li>
+          <a class="header__menu-link" href="/gallery-list">案件與工程實績</a>
+        </li>
+        <!-- <li>
+            <a class="header__menu-link" href="/news-list">最新消息</a>
+          </li> -->
+        <li>
+          <a class="header__menu-link" href="/contact">聯絡我們</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</header>
+
+<style lang="scss">
+  .header {
+    background-color: rgb(70, 130, 171);
+    font-weight: 700;
+  }
+  .header__logo {
+    .img {
+      max-height: 120px;
+      object-fit: contain;
+    }
+  }
+  .header__content-wrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    position: relative;
+  }
+  .header__menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    margin-bottom: 0;
+    padding-left: 0;
+    li {
+      align-self: center;
+    }
+  }
+  .header__menu-link {
+    font-size: 1.1rem;
+    padding: 0.5rem 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    color: #ffffff;
+  }
+  .header__menu-link:hover {
+    color: #e6e6e6;
+  }
+  .header__mobile-menu-wrap {
+    display: none;
+    position: absolute;
+    top: calc((120px + 2rem) / 2);
+    right: 1rem;
+    transform: translateY(-50%);
+  }
+  .header__mobile-menu {
+    width: 4rem;
+    height: 4rem;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    input {
+      display: none;
+    }
+    &.active {
+      .bar-top {
+        // transform: rotate(-45deg);
+        transform: translateY(14px) rotate(-45deg);
+      }
+      .bar-middle {
+        display: none;
+        // height: 0;
+      }
+      .bar-bottom {
+        transform: rotate(45deg);
+      }
+    }
+  }
+  .menu-bar {
+    height: 2px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    transition: all 0.3s;
+  }
+  .bar-top {
+    margin-top: 14px;
+  }
+  .bar-middle {
+    margin-top: 14px;
+  }
+  .bar-bottom {
+    margin-top: 14px;
+  }
+  //   .opacity-1 {
+  //     opacity: 1 !important;
+  //   }
+
+  // lg breakpoint
+  // Mobile / PC 切換斷點
+  @media (max-width: 991.9px) {
+    .header__menu {
+      display: none;
+      opacity: 0;
+      transition: all 0.3s;
+      // For setting opacity of display: none element
+      transition-behavior: allow-discrete;
+      @starting-style {
+        opacity: 0;
+      }
+      li {
+        text-align: center;
+        font-size: 1.2rem;
+        border: 1px solid #ffffff;
+        a {
+          display: inline-block;
+          width: 100%;
+          padding: 1rem 0;
+        }
+      }
+      &.opacity-1 {
+        opacity: 1;
+      }
+    }
+    .header__mobile-menu-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .header__content-wrap {
+      display: block;
+    }
+  }
+
+  // sm breakpoint
+  // Logo 變小斷點
+  @media (max-width: 575.9px) {
+    .header__logo {
+      .img {
+        max-width: 200px;
+        object-fit: contain;
+      }
+    }
+    .header__mobile-menu-wrap {
+      top: calc((80px + 2rem) / 2);
+    }
+  }
+</style>
+<script>
+  import $ from 'jquery';
+  $('#headerMobileMenu').on('click', function () {
+    // $('#headerMenu').toggle(300);
+    $('#headerMenu').toggleClass('d-block opacity-1');
+    $(this).toggleClass('active');
+  });
+
+  $(window).on('resize', function () {
+    const windowWidth = $(this).width();
+    if (windowWidth > 991.9) {
+      // 強制解除選單的區塊顯示，恢復成css的
+      $('#headerMenu').removeClass('d-block opacity-1');
+      // 強制結束移動裝置表單開啟狀態
+      $('#headerMobileMenu').removeClass('active');
+    }
+  });
+</script>

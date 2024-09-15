@@ -1,5 +1,10 @@
+---
+import { Image } from 'astro:assets';
+import arrowUp from '../images/layout/arrow-up-white.svg';
+---
+
 <div class="aside__top" style={Astro.props.style}>
-  <img class="aside__top-image" src="/arrow-up-white.svg" alt="回到頁面頂端" />
+  <Image class="aside__top-image" src={arrowUp} alt="回到頁面頂端" loading="eager" />
 </div>
 
 <style>
@@ -7,8 +12,8 @@
     background-color: #4682ab;
     display: inline-block;
     position: fixed;
-    height: 2rem;
-    width: 2rem;
+    height: 4rem;
+    width: 4rem;
     border-radius: 50%;
     right: 1.5rem;
     bottom: 4rem;
@@ -16,6 +21,8 @@
   }
   .aside__top-image {
     position: absolute;
+    height: 2rem;
+    width: 2rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

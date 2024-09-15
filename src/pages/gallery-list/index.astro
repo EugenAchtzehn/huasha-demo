@@ -1,22 +1,73 @@
 ---
+import LinkButton from '../../components/LinkButton.astro';
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import gallerySuccess_1 from '../../images/gallery/1_gallery-success.jpg';
 ---
 
 <Layout title="案件與工程實績">
   <div class="gallery__wrap">
     <h1>案件與工程實績</h1>
-    <div class="row">
-      <div class="col-12 col-md-6">
-        <section class="content-box"></section>
+    <div class="row g-3">
+      <div class="col-12 col-lg-6 text-center">
+        <section class="gallery__head-image" id="gallery__head-image">
+          <Image class="img" src={gallerySuccess_1} alt="成功案例圖片_1" loading="eager" />
+          <div class="gallery__head-image-text" id="gallery__head-image-text">
+            <span>國家原子能研究院 廢海水處理系統</span>
+          </div>
+        </section>
       </div>
-      <div class="col-12 col-md-6">
-        <section class="content-box">國家原子能研究院 廢海水處理系統</section>
+      <div class="col-12 col-lg-6">
+        <section class="gallery__wrap-content">
+          <h2 class="my-3">國家原子能研究院 廢海水處理系統</h2>
+          <p>
+            此廢海水處理系統，採用 DuPont FilmTec™ Fortilife™
+            NF-1000，對濃廢水之高回收率與高去鹽選擇性的奈米濾膜特性，將廢海水處理之淨水回收率達到65%以上，減少海水廢濃液之產出，是國內首個採用NF系統對海水廢棄物(海淡濃鹵)進行減量化、資源化處理的先進設備。
+          </p>
+        </section>
       </div>
     </div>
   </div>
 </Layout>
-<style>
+<style lang="scss">
   .gallery__wrap {
     padding: 2rem 0;
+    .gallery__wrap-content {
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: center;
+      // height: 100%;
+      p {
+        line-height: 1.8rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .gallery__head-image {
+    display: inline-block;
+    position: relative;
+    .img {
+      max-width: 100%;
+      // object-fit: contain;
+    }
+  }
+  .gallery__head-image-text {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: rgb(70, 130, 171, 0.8);
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    width: calc(100% - 2rem);
+    height: 30%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.5s;
+  }
+  .gallery__head-image:hover .gallery__head-image-text {
+    opacity: 0;
   }
 </style>

@@ -1,6 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import LinkButton from '../../components/LinkButton.astro';
+import { Image } from 'astro:assets';
+import serviceList_1 from '../../images/service/1-service-list.jpg';
 ---
 
 <Layout title="服務內容">
@@ -14,10 +16,11 @@ import LinkButton from '../../components/LinkButton.astro';
     <div class="row g-3">
       <div class="col-12 col-lg-6">
         <a href="/service-list/service-1">
-          <img
+          <Image
             class="service__link-image"
-            src="/service-1.jpg"
+            src={serviceList_1}
             alt="中小型貨櫃式海水淡化機示意圖"
+            loading="eager"
           />
         </a>
       </div>
@@ -35,7 +38,7 @@ import LinkButton from '../../components/LinkButton.astro';
         <a href="/service-list/service-2">
           <img
             class="service__link-image"
-            src="/service-2.jpg"
+            src="/images/service-2.jpg"
             alt="水資源處理及資源化再利用示意圖"
           />
         </a>
@@ -51,7 +54,7 @@ import LinkButton from '../../components/LinkButton.astro';
       </div>
       <div class="col-12 col-lg-6">
         <a href="/service-list/service-3">
-          <img class="service__link-image" src="/service-3.jpg" alt="設備銷售示意圖" />
+          <img class="service__link-image" src="/images/service-3.jpg" alt="設備銷售示意圖" />
         </a>
       </div>
       <div class="col-12 col-lg-6">
@@ -70,7 +73,7 @@ import LinkButton from '../../components/LinkButton.astro';
   .service__wrap {
     padding: 2rem 0;
     p {
-      line-height: 1.5rem;
+      line-height: 1.8rem;
       font-size: 1.2rem;
     }
   }
@@ -83,6 +86,7 @@ import LinkButton from '../../components/LinkButton.astro';
   }
   .service__link-image {
     max-width: 100%;
+    object-fit: contain;
   }
   .service__link-title {
     margin-bottom: 1.5rem;

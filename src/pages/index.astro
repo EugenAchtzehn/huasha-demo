@@ -1,69 +1,195 @@
 ---
+import '../styles/aos.css';
+import { Image } from 'astro:assets';
+import waterDrop_1 from '../images/index/1_water-drop.png';
+import waterDrop_2 from '../images/index/2_water-drop.png';
+import waterDrop_3 from '../images/index/3_water-drop.png';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="華夏資源開發 首頁">
   <div class="index__wrap">
-    <h1>我們願景和專長</h1>
     <section class="row g-2 mb-3">
       <div class="col-12 col-lg-6">
         <section class="index__image-wrap">
-          <img src="/water-drop-1.png" alt="水滴icon-1" />
+          <Image
+            class="img"
+            src={waterDrop_1}
+            alt="水滴icon-1"
+            data-aos="zoom-out-right"
+            data-aos-duration="2000"
+            loading="eager"
+          />
         </section>
       </div>
       <div class="col-12 col-lg-6">
-        <section class="content-box inner-adjust">
+        <section class="inner-adjust">
           <h2>2050 淨零轉型</h2>
           <p>
-            華夏資源致力於開發創新的科技和解決方案，我們深知保護自然生態的重要性，不僅攸關競爭力，
-            也關係環境永續發展，打下長治久安的基礎，留下一個更好的環境給年輕人。
+            華夏資源開發致力於開發創新的科技和解決方案，我們深知保護自然生態的重要性，不僅攸關競爭力，
+            也關係著環境的永續發展。保護好自然生態就是打下長治久安的基礎，留下一個更好的未來給年輕人。
           </p>
         </section>
       </div>
     </section>
     <section class="row g-2 mb-3 flex-column-reverse flex-lg-row">
       <div class="col-12 col-lg-6">
-        <section class="content-box inner-adjust">
+        <section class="inner-adjust">
           <h2>移動式海水淡化系統開發</h2>
           <p>
-            自主開發設計符合使用者當地海水水質標準及產出淡水水質標準的設備需求，滿足客戶需求<br />
-            海水淡化解決方案提供者與客製化海水淡化設備研發商。
+            我們是海水淡化解決方案提供者與客製化海水淡化設備研發商，
+            能自主開發、設計符合使用者當地海水水質標準及產出淡水水質標準的設備，滿足客戶需求。
           </p>
         </section>
       </div>
       <div class="col-12 col-lg-6">
         <section class="index__image-wrap">
-          <img src="/water-drop-2.png" alt="水滴icon-2" />
+          <Image
+            class="img"
+            src={waterDrop_2}
+            alt="水滴icon-2"
+            data-aos="zoom-out-left"
+            data-aos-duration="2000"
+            loading="eager"
+          />
         </section>
       </div>
     </section>
     <section class="row g-2 mb-3">
       <div class="col-12 col-lg-6">
         <section class="index__image-wrap">
-          <img src="/water-drop-3.png" alt="水滴icon-3" />
+          <Image
+            class="img"
+            src={waterDrop_3}
+            alt="水滴icon-3"
+            data-aos="zoom-out-right"
+            data-aos-duration="2000"
+          />
         </section>
       </div>
       <div class="col-12 col-lg-6">
-        <section class="content-box inner-adjust">
+        <section class="inner-adjust">
           <h2>海水淡化設備代理銷售</h2>
           <p>
-            引進歐洲最先進的四合一技術----整合高壓海水泵浦、能源回收器、增壓泵與動力馬達之 4-in-1
-            technology<br />
-            達到節約空間、減少能耗、降低成本與模組化安裝的優勢
+            華夏資源開發引進了歐洲最先進的四合一技術——整合高壓海水泵浦、能源回收器、增壓泵與動力馬達之
+            4-in-1 technology，具有節約空間、減少能耗、降低成本與模組化安裝的優勢。
           </p>
         </section>
       </div>
     </section>
+  </div>
+  <div class="about__wrap">
+    <h1>公司介紹</h1>
+    <ul>
+      <li>
+        <h2 class="about__wrap-title">宗旨：</h2>
+        <ul>
+          <li>
+            <p class="about__wrap-content">
+              公司創辦人梁家源董事長，一生鑽研水資源處理與資源化利用。成立華夏資源開發股份有限公司為提升國內海水淡化核心技術研發、產水能耗降低、水質標準提升為職志
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2 class="about__wrap-title">目標：</h2>
+        <ul>
+          <li>
+            <p class="about__wrap-content">
+              推動「跨域整合、環境永續」、守護「藍色海洋、綠色地球」
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2 class="about__wrap-title">願景：</h2>
+        <ul>
+          <li>
+            <p class="about__wrap-content">Application：掌握綠色產業核心技術的應用</p>
+          </li>
+          <li>
+            <p class="about__wrap-content">Benchmark：建立海水資源化再利用化基準</p>
+          </li>
+          <li>
+            <p class="about__wrap-content">Creativities：致力環境永續經營理念的創意</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2 class="about__wrap-title">發展策略：</h2>
+        <ul>
+          <li>
+            <p class="about__wrap-content">開發設計：持續自主研發全新高效低能耗海水淡化操作模組</p>
+          </li>
+          <li>
+            <p class="about__wrap-content">整合綠能：面對全球資源稀缺壓力，整合綠電產水是為趨勢</p>
+          </li>
+          <li>
+            <p class="about__wrap-content">產學合作：整合學術單位機械、材料、力學等應用科學資源</p>
+          </li>
+          <li>
+            <p class="about__wrap-content">循環經濟：達到淡水高產出、鹵水減量，海水全資源化利用</p>
+          </li>
+          <li>
+            <p class="about__wrap-content">海洋採礦：為資源稀缺臺灣海島國家建立海洋採礦商業模式</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2 class="about__wrap-title">團隊成員：</h2>
+        <ul>
+          <li>
+            <p class="about__wrap-content">
+              董事長梁家源與技術副總謝明修、顧問徐毓志博士，分別就海水淡化產業的「研發-實作-應用」扮演分工角色
+            </p>
+          </li>
+        </ul>
+        <ul class="about__wrap-personnel row g-3 mt-3 mb-5">
+          <li class="col-12 col-lg-4">
+            <div class="content-box p-3">
+              <h3>董事長 梁家源</h3>
+              <p class="about__wrap-content">
+                梁董事長擁有薄膜過濾與能源回收裝置等國內外12項發明或新型專利，打破海淡機組運轉邏輯（免添加化學藥劑、RO膜長期使用免清洗），樹立業界新典範，去除海淡高耗能、高耗材的刻板印象
+              </p>
+            </div>
+          </li>
+          <li class="col-12 col-lg-4">
+            <div class="content-box p-3">
+              <h3>技術副總 謝明修</h3>
+              <p class="about__wrap-content">
+                謝副總曾長期任職澎湖、大金門海淡廠，自主研發200CMD貨櫃式海水淡化機組，為國內首座具技術專利的中小型海淡機
+              </p>
+            </div>
+          </li>
+          <li class="col-12 col-lg-4">
+            <div class="content-box p-3">
+              <h3>顧問 徐毓志</h3>
+              <p class="about__wrap-content">
+                徐顧問為南加大化工博士，擁有生物技術領域專業，對海水淡化產出之濃鹵資源化應用，有豐富實務經驗
+              </p>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </div>
 </Layout>
 
 <style lang="scss">
   .index__wrap {
     padding: 2rem 0;
+    h2 {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      line-height: 1.8rem;
+      font-size: 1.2rem;
+    }
   }
   .index__image-wrap {
     text-align: center;
-    img {
+    .img {
     }
   }
   .inner-adjust {
@@ -72,4 +198,30 @@ import Layout from '../layouts/Layout.astro';
     justify-content: center;
     flex-direction: column;
   }
+
+  .about__wrap-title {
+    text-align: left;
+    margin: 1.5rem 0;
+  }
+  .about__wrap-content {
+    line-height: 1.8rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .about__wrap-personnel {
+    list-style: none;
+    padding-left: 0;
+  }
+  // sm breakpoint
+  @media (max-width: 575.9px) {
+    .index__image-wrap .img {
+      max-width: 200px;
+      object-fit: contain;
+    }
+  }
 </style>
+<script>
+  import AOS from 'aos';
+  // console.log(AOS);
+  AOS.init();
+</script>
