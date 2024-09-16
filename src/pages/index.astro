@@ -16,8 +16,8 @@ import Layout from '../layouts/Layout.astro';
             class="img"
             src={waterDrop_1}
             alt="水滴icon-1"
-            data-aos="zoom-out-right"
-            data-aos-duration="2000"
+            data-aos="zoom-out"
+            data-aos-duration="1500"
             loading="eager"
           />
         </section>
@@ -48,8 +48,8 @@ import Layout from '../layouts/Layout.astro';
             class="img"
             src={waterDrop_2}
             alt="水滴icon-2"
-            data-aos="zoom-out-left"
-            data-aos-duration="2000"
+            data-aos="zoom-out"
+            data-aos-duration="1500"
             loading="eager"
           />
         </section>
@@ -62,8 +62,8 @@ import Layout from '../layouts/Layout.astro';
             class="img"
             src={waterDrop_3}
             alt="水滴icon-3"
-            data-aos="zoom-out-right"
-            data-aos-duration="2000"
+            data-aos="zoom-out"
+            data-aos-duration="1500"
           />
         </section>
       </div>
@@ -190,6 +190,7 @@ import Layout from '../layouts/Layout.astro';
   .index__image-wrap {
     text-align: center;
     .img {
+      max-width: 350px;
     }
   }
   .inner-adjust {
@@ -216,6 +217,7 @@ import Layout from '../layouts/Layout.astro';
   @media (max-width: 575.9px) {
     .index__image-wrap .img {
       max-width: 200px;
+      max-height: 200px;
       object-fit: contain;
     }
   }

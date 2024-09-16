@@ -6,19 +6,23 @@ import ToTopButton from '../components/ToTopButton.astro';
 interface Props {
   title: string;
 }
-
+const { url } = Astro;
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hant-TW">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title} - 華夏資源開發股分有限公司</title>
+    <title>{title} - 華夏資源開發股份有限公司</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title + ' - 華夏資源開發股份有限公司'} />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={url.origin + '/images/hsrd-logo-social.jpg'} />
   </head>
 
   <body>
