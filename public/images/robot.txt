@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://huasha.com.tw/sitemap-index.xml
