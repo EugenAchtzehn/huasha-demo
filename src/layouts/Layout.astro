@@ -8,6 +8,8 @@ interface Props {
 }
 const { url } = Astro;
 const { title } = Astro.props;
+// 標準網址必須使用設定檔，不能根據進入的 URL 改變
+const canonicalUrl = `${Astro.site.origin}${Astro.url.pathname}`;
 ---
 
 <!doctype html>
@@ -21,6 +23,8 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <!-- 標準網址設定 for SEO -->
+    <link rel="canonical" href={canonicalUrl} />
     <meta name="generator" content={Astro.generator} />
     <title>{title} - 華夏資源開發股份有限公司</title>
 
